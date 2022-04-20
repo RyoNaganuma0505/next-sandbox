@@ -4,7 +4,7 @@ export default function Post({ pageId }) {
   return (
     <div>
       <h1># リクエストパスから動的にページを生成</h1>
-
+      <h2>Incremental Static Regeneration</h2>
       <p>{pageId}</p>
       <p>↑ パスに含まれていて動的に生成されたもの。</p>
       <p>用意したJSは[id].jsのみだが、</p>

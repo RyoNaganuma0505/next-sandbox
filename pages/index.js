@@ -29,7 +29,7 @@ export default function Home({ allPostsData }) {
       </p>
       <p>
         <Link href="/posts/dinamicPage/a">
-          リクエストパスに応じてページを動的に生成する
+          リクエストパスに応じてページを動的に生成する(Incremental Static Regeneration)
         </Link>
       </p>
       <p>
