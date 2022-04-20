@@ -16,6 +16,7 @@ export default function Post({ pageId }) {
         ※<Link href="/posts/dinamicPage/d">/posts/dinamicPage/d</Link>
         は未定義なのでNotFound
       </p>
+      <p>関数: getStaticPaths</p>
       <div>
         <Link href="/">← TOP</Link>
       </div>

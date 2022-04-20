@@ -18,6 +18,7 @@ const TestPage1 = ({ a }) => {
       <p>↑はpropsで渡した値だが、これもビルド時に固定される。</p>
       <Image src="/images/o.jpg" height={144} width={200} />
       <p>↑Nextで用意されたImageタグ。imageはクライアントから取得処理が走る。</p>
+      <p>関数: getStaticProps</p>
       <div>
         <Link href="/posts/TestPage2?id=123456789">次のサンプルへ</Link>
       </div>

@@ -18,6 +18,7 @@ const TestPage2 = ({ pageId }) => {
       <p>
         ↑はクエリパラメータのID。IDによってレンダリング結果が変わるはずだが、レスポンスを見ると、完成された状態で手元に届いているのがわかる。
       </p>
+      <p>関数: getServerSideProps</p>
       <div>
         <Link href="/posts/TestPage3">次のサンプルへ</Link>
       </div>

@@ -1,6 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
 
 export default function Home({ allPostsData }) {
+  const [open, setOpen] = useState(false);
   console.log(allPostsData);
   return (
     <div>
@@ -32,6 +35,12 @@ export default function Home({ allPostsData }) {
       <p>
         <Link href="/api/hello">APIサーバとしての使い方をしてしまう</Link>
       </p>
+      <button onClick={() => setOpen(!open)}>+ フォルダー構成について</button>
+      <div style={{ display: open ? "block" : "none" }}>
+        <li>pages下に置いたファイルがパスとして使えるようになる</li>
+        <li>[]のファイルはパスから動的にページを生成できるようになる</li>
+        <Image src="/images/next-folders.png" height={520} width={320} />
+      </div>
     </div>
   );
 }

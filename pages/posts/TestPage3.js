@@ -31,6 +31,7 @@ const TestPage3 = ({ b }) => {
         ↑
         こちらはPropsで渡された値。SGで生成されているので、HTMLを取得した段階ですでにレンダリング済。
       </p>
+      <p>hook: useSWR</p>
       <div>
         <Link href="/">← TOP</Link>
       </div>
