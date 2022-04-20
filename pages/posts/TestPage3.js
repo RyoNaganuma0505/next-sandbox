@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import useSWR from "swr";
 import axios from "axios";
 
@@ -13,29 +12,34 @@ const fetcher = async (url) => {
  * テストページ用のコンポーネント
  * クライアント側でデータの取得を行う場合
  */
-const TestPage3 = ({ postData, a }) => {
-  const { data, error } = useSWR(
+const TestPage3 = ({ b }) => {
+  const { data } = useSWR(
     "https://api.clouddirectxr-dev.docomo-cloud.com:8080/healthcheck",
     fetcher
   );
-  console.log(postData);
-  console.log("props.a: ", a);
-  console.log("data: ", data);
   return (
     <div>
-      <div>foobar</div>
-      <div>{data}</div>
+      <h1># クライアントでHTML/JSを取得してからAPIを実行</h1>
+      <h2>Stale while Revalidate</h2>
+      <p>{data}</p>
+      <p>
+        ↑
+        Axiosで取得した値。HTMLを取得したときには入っていないが、クライアントから取得してからレンダリングしている。
+      </p>
+      <p>{b}</p>
+      <p>
+        ↑
+        こちらはPropsで渡された値。SGで生成されているので、HTMLを取得した段階ですでにレンダリング済。
+      </p>
       <div>
-        <Link href="/">←back</Link>
+        <Link href="/">← TOP</Link>
       </div>
-      <Image src="/images/o.jpg" height={144} width={200} />
     </div>
   );
 };
 
-export const getServerSideProps = async (contenxt) => {
-  console.log("context: ", contenxt);
-  return { props: { b: "this is b" } };
+export const getStaticProps = async () => {
+  return { props: { b: "hogehoge" } };
 };
 
 export default TestPage3;

@@ -4,16 +4,34 @@ export default function Home({ allPostsData }) {
   console.log(allPostsData);
   return (
     <div>
-      test
+      <h1>Nextさわってみたよ</h1>
       <div>
-        <Link href="/posts/TestPage1">Jump to TestPage1</Link>
+        ※このページをロードしたタイミングでは、HTMLとindex.jsが読み込まれていることを確認。
       </div>
-      <div>
-        <Link href="/posts/TestPage2">Jump to TestPage2</Link>
-      </div>
-      <div>
-        <Link href="/posts/TestPage3">Jump to TestPage3</Link>
-      </div>
+      <p>
+        <Link href="/posts/TestPage1">
+          静的サーバサイドレンダリング(Static Generation)
+        </Link>
+      </p>
+      <p>
+        <Link href="/posts/TestPage2?id=abcdefg">
+          リクエストに応じたサーバサイドレンダリング(Server Side Rendering)
+        </Link>
+      </p>
+      <p>
+        <Link href="/posts/TestPage3">
+          クライアントから改めてAPIを叩いて最新データを取得する(Stale While
+          Revalidate)
+        </Link>
+      </p>
+      <p>
+        <Link href="/posts/dinamicPage/a">
+          リクエストパスに応じてページを動的に生成する
+        </Link>
+      </p>
+      <p>
+        <Link href="/api/hello">APIサーバとしての使い方をしてしまう</Link>
+      </p>
     </div>
   );
 }
